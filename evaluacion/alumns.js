@@ -10,11 +10,8 @@ const alumns = [{
   "surname": 'Perenganítez' 
 }];
 
-function filterBySurname(req, res, next) {
-  req.filteredAlumns = alumns.filter(
-    alumn => alumn.surname === req.query.surname
-  );
-  next();
+function filterBySurname(surname) {
+  return alumns.filter(alumn => alumn.surname === surname);
 }
 
 export default filterBySurname;
